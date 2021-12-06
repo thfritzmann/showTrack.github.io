@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="showTrack_style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap&effect=anaglyph"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Show Track</title>
+  </head>
+  <body class="background">
+    <input type="file" id="inputFile" class="invisibleFileButton" />
+    <audio
+      id="addSound"
+      class="invisibleFileButton"
+      src="audioEdit_add.mp3"
+    ></audio>
+    <audio
+      id="removeSound"
+      class="invisibleFileButton"
+      src="audioEdit_remove.mp3"
+    ></audio>
+    
+    <div style="display:none;" class="centering" id= "completedShowWindow">
+      <div class="completedShows">
+      <i class="fas fa-caret-up upArrow" id="upArrowBack"></i>
+      <textarea readonly="readonly" wrap="hard" id="completedList" class="userListComplete">
+      ~Completed Shows
+      </textarea>
+      </div>
+    </div>
+
+    <h1 id="showTrackText" class="title">Show Track</h1>
+    <h1 id="randomShowGenerate" class="title" style="left: 300px">
+      Random Show
+    </h1>
+    <h1  id="downloadButton" style="left:900px;" class="title"
+      >
+        Download
+    </h1>
+
+    <div class="randomShow">
+      <p id="randomshow" class="innerText">No Shows available</p>
+    </div>
+
+    <div class="currentShow">
+      <p class="insideTitle">Current Show</p>
+      <div class="statsBox">
+        <p id="currentShow" class="innerText"></p>
+      </div>
+      <p class="insideTitle">Episode #</p>
+      <div style="flex-direction: column; width: 30%" class="statsBox">
+        <p id="episodeCount" class="innerText"></p>
+        <i id="addEpisode" class="fas fa-plus-square sideArrow"></i>
+        <i id="subtractEpisode" class="fas fa-minus-square sideArrow"></i><br />
+        <i id="restartCountEpisode" class="fas fa-redo-alt sideArrow"></i>
+      </div>
+      <p class="insideTitle">Total shows planned</p>
+      <div class="statsBox">
+        <p id="totalShowsPlanned" class="innerText"></p>
+      </div>
+      <p class="insideTitle">Total shows completed</p>
+      <div style="flex-direction: column; width: 30%" class="statsBox">
+        <p id="showsCompletedCount" class="innerText"></p>
+        <i id="addCompleteShow" class="fas fa-plus-square sideArrow"></i>
+        <i id="subtractCompleteShow" class="fas fa-minus-square sideArrow"></i>
+        <br />
+        <i id="resetCompleteShow" class="fas fa-redo-alt sideArrow"></i>
+      </div>
+    </div>
+    <div class="currentShowAccent1"></div>
+    <div class="currentShowAccent2"></div>
+
+    <div class="mainSection">
+      <br />
+      <input
+        class="userInput"
+        id="userCommand"
+        name="command"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <textarea
+        readonly="readonly"
+        wrap="hard"
+        id="currentList"
+        class="userList"
+      >
+~Current List
+		</textarea
+      >
+      <textarea
+        readonly="readonly"
+        wrap="hard"
+        id="commandTrack"
+        class="commandTrack"
+      >
+~Welcome to Show Track!
+~Type one of the listed commands and hit ENTER to get started 	
+{Help - a list of commands} 
+{Start - create a new local account} 	
+{Login - login using a previous saved account}
+		</textarea
+      >
+    </div>
+    <div class="accentdiv1"></div>
+    <div class="accentdiv2"></div>
+    
+  <div id="particles-js"></div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/8c59bf2806.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="showTrack.js"></script>
+  <script src="classFunctions.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</html>
