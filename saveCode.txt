@@ -1,0 +1,63 @@
+Extra saved code
+
+
+
+
+
+window.localStorage.list = []; 
+window.localStorage.currentShow = '';
+window.localStorage.episodeNumber = 0;
+window.localStorage.showsCompleted = 0;
+window.localStorage.soundOption = true;
+
+//counters
+currentEpisodes = document.getElementById('episodeCount');
+totalShowsCompleted = document.getElementById('showsCompletedCount');
+
+//strings
+currentShow = document.getElementById('currentShow');
+totalShowsPlanned = document.getElementById('totalShowsPlanned');
+
+//random
+randomSection = document.getElementById('randomshow');
+
+//userCommand
+
+
+
+                fileReader.onload = function(values)
+                {
+                    const currentFile = values.target.result;
+                    const allLines = currentFile.split("\n");
+                    for(i=0; i<allLines.length; i++)
+                    {
+                        currentShow = allLines[i];
+                        currentShowLower = currentShow.toLowerCase();
+                        localStorage.list.push(currentShowLower);
+                    }
+                    localStorage.list.sort();
+                };
+
+                fileReader.onerror =function()
+                {
+                    alert(e.target.error.name);
+                };
+
+                fileReader.readAsText(allFiles);
+            })
+			
+			
+			
+            if (currentList.indexOf(userCommandSplit[userCommandSplit.length-1]) === -1)
+            {
+                document.getElementById("commandTrack").value +="\n\n"+ "|"+userCommand+ "\n\n"+ "~Could not find "+ userCommandSplit[1] + " in your list";  
+                document.getElementById("userCommand").value = "";
+            }
+            else
+            {
+                currentList.splice(currentList.indexOf(userCommandSplit[userCommandSplit.length-1]),1);
+                localStorage.list = currentList;
+                document.getElementById("commandTrack").value +="\n\n"+ "|"+userCommand+ "\n\n"+ "~removed "+ userCommandSplit[1] + " from your list";  
+                document.getElementById("userCommand").value = "";
+                updateVals();
+            }
